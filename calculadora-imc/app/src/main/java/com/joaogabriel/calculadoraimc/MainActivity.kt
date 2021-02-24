@@ -18,18 +18,24 @@ class MainActivity : AppCompatActivity() {
         binding.botaoLimparCampos.setOnClickListener { limparCampos() }
     }
 
-    private fun calcularImc() {
-        val peso = binding.campoPeso.text.toString().toInt()
+    private fun limparCampos() {
+        binding.campoPeso.text.clear()
+        binding.campoAltura.text.clear()
+    }
+
+    private fun buscarDados(): Map<String, Double> {
+        val peso = binding.campoPeso.text.toString().toDouble()
         val altura = binding.campoAltura.text.toString().toDouble()
-        val imc = peso / (altura * altura)
+
+        return mapOf("peso" to peso, "altura" to altura)
+    }
+
+    private fun calcularImc() {
+        val dados = buscarDados()
+        val imc = dados.getValue("peso") / (dados.getValue("altura") * dados.getValue("altura"))
 
         val resultado = getString(R.string.imc, imc)
         binding.campoResultado.text = resultado
         binding.campoResultado.visibility = View.VISIBLE
-    }
-
-    private fun limparCampos() {
-        binding.campoPeso.text.clear()
-        binding.campoAltura.text.clear()
     }
 }
