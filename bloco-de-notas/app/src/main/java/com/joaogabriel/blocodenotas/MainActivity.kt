@@ -9,6 +9,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import com.joaogabriel.blocodenotas.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -20,9 +21,23 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+        val preferencia = PreferenciaAnotacao(applicationContext)
+        val botaoSalvar = binding.fab
+
+        botaoSalvar.setOnClickListener {
+            val anotacaoRecuperada = binding.editContainer.editAnotacao.text.toString()
+
+            if (anotacaoRecuperada == "") {
+                Toast.makeText(this, "Digite alguma coisa...", Toast.LENGTH_SHORT).show()
+            } else {
+                preferencia.salvarAnotacao(anotacaoRecuperada)
+                Toast.makeText(this, "Anotação salva com sucesso!", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        val anotacao = preferencia.recuperarAnotacao()
+        if (anotacao != "") {
+            binding.editContainer.editAnotacao.setText(anotacao)
         }
     }
 }
