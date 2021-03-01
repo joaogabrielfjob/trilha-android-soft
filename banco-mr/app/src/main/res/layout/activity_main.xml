@@ -17,7 +17,7 @@
         app:srcCompat="@drawable/saldo" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/faturas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -50,10 +50,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/faturas" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/transferencia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -63,7 +63,7 @@
         app:srcCompat="@drawable/transferencia" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/poupanca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -83,7 +83,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/transferencia" />
 
     <TextView
         android:id="@+id/textView4"
@@ -96,7 +96,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/poupanca" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
