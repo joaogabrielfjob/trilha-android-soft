@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "988721605325",
+    "project_id": "netflix-efc30",
+    "storage_bucket": "netflix-efc30.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988721605325:android:f819e90c6f704656c85784",
+        "android_client_info": {
+          "package_name": "com.joaogabriel.netflix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "988721605325-ukofe1agp5hnbbscq6ejaqtsqpddk9m0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.joaogabriel.netflix",
+            "certificate_hash": "a0fd13db6697fbcf9017ea6bbfe51691f2c4d071"
+          }
+        },
+        {
+          "client_id": "988721605325-vtt0oet35u71cau935895njhvtojlhoj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiWgHV2QZ5nP0Dc87SvwakEJPXNfjFXeM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "988721605325-vtt0oet35u71cau935895njhvtojlhoj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
