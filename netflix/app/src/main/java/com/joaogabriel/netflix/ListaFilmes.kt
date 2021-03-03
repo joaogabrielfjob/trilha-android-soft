@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.joaogabriel.netflix.adapter.FilmesAdapter
@@ -23,6 +24,14 @@ class ListaFilmes : AppCompatActivity() {
         val recyclerFilmes = binding.recyclerFilmes
         recyclerFilmes.adapter = FilmesAdapter(addFilmes())
         recyclerFilmes.layoutManager = GridLayoutManager(applicationContext, 3)
+
+        recyclerFilmes.addOnItemClickListener(object: OnItemClickListener{
+            override fun onItemClicked(position: Int, view: View) {
+                when {
+                    position == 0 -> detalhesFilme()
+                }
+            }
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -48,5 +57,11 @@ class ListaFilmes : AppCompatActivity() {
 
         startActivity(intent)
         finish()
+    }
+
+    private fun detalhesFilme() {
+        val intent = Intent(this, DetalhesFilme::class.java)
+
+        startActivity(intent)
     }
 }

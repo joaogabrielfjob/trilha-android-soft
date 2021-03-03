@@ -12,17 +12,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Netflix">
         <activity
-            android:name=".ListaFilmes"
+            android:name=".Video"
             android:exported="true"></activity>
         <activity
+            android:name=".DetalhesFilme"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ListaFilmes"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".FormCadastro"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".FormLogin"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
