@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.recyclerview.widget.GridLayoutManager
 import com.google.firebase.auth.FirebaseAuth
+import com.joaogabriel.netflix.adapter.FilmesAdapter
 import com.joaogabriel.netflix.databinding.ActivityListaFilmesBinding
+import com.joaogabriel.netflix.model.addFilmes
 
 class ListaFilmes : AppCompatActivity() {
     private lateinit var binding: ActivityListaFilmesBinding
@@ -17,7 +20,9 @@ class ListaFilmes : AppCompatActivity() {
         binding = ActivityListaFilmesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        val recyclerFilmes = binding.recyclerFilmes
+        recyclerFilmes.adapter = FilmesAdapter(addFilmes())
+        recyclerFilmes.layoutManager = GridLayoutManager(applicationContext, 3)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
