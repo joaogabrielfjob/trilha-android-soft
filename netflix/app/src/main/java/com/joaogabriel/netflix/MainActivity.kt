@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             abrirTelaLogin()
         }, 2000)
+
+        val notas: MutableList<String> = listOf<String>()
     }
 
     private fun abrirTelaLogin() {
