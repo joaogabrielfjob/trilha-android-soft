@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface MarvelApiRequests {
-    
+
     @GET("characters")
     fun getCharacters(@Query("apikey") apikey: String,
                       @Query("ts") ts: String,
