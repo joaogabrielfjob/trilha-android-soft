@@ -10,4 +10,4 @@ data class MarvelResult(val name: String, val comics: MarvelComics)
 
 data class MarvelComics(val items: ArrayList<MarvelComic>)
 
-data class MarvelComic(val name: String, resourceURI: )
+data class MarvelComic(val name: String)
