@@ -26,7 +26,7 @@ class CharacterFragment : Fragment(R.layout.fragment_character) {
         binding = FragmentCharacterBinding.bind(view)
 
         characterViewModel = ViewModelProvider(this,
-        CharacterViewModel.CharacterViewModelFactory(CharacterRepository())).
+        CharacterViewModel.CharacterViewModelFactory(CharacterRepository(), getKeys())).
         get(CharacterViewModel::class.java)
 
         characterViewModel.characterResponse.observe(viewLifecycleOwner, { response ->
@@ -55,5 +55,12 @@ class CharacterFragment : Fragment(R.layout.fragment_character) {
     fun openCharacterDetails(character: MarvelResult) {
         detailsViewModel.setDetails(character)
         Navigation.findNavController(requireView()).navigate(R.id.characterToDetails)
+    }
+
+    fun getKeys(): Map<String, String> {
+        return mapOf(
+            "PUBLIC_KEY" to requireContext().getString(R.string.PUBLIC_KEY),
+            "PRIVATE_KEY" to requireContext().getString(R.string.PRIVATE_KEY),
+        )
     }
 }
