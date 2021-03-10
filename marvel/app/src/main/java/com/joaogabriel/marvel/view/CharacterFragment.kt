@@ -9,8 +9,8 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.joaogabriel.marvel.R
 import com.joaogabriel.marvel.databinding.FragmentCharacterBinding
-import com.joaogabriel.marvel.model.MarvelResult
-import com.joaogabriel.marvel.model.repository.CharacterRepository
+import com.joaogabriel.marvel.model.Character
+import com.joaogabriel.marvel.model.RetrofitRequest
 import com.joaogabriel.marvel.utils.Resource
 import com.joaogabriel.marvel.viewmodel.CharacterViewModel
 import com.joaogabriel.marvel.viewmodel.DetailsViewModel
@@ -26,7 +26,7 @@ class CharacterFragment : Fragment(R.layout.fragment_character) {
         binding = FragmentCharacterBinding.bind(view)
 
         characterViewModel = ViewModelProvider(this,
-        CharacterViewModel.CharacterViewModelFactory(CharacterRepository(), getKeys())).
+        CharacterViewModel.CharacterViewModelFactory(RetrofitRequest(), getKeys())).
         get(CharacterViewModel::class.java)
 
         characterViewModel.characterResponse.observe(viewLifecycleOwner, { response ->
@@ -52,7 +52,7 @@ class CharacterFragment : Fragment(R.layout.fragment_character) {
         characterViewModel.getCharacters()
     }
 
-    fun openCharacterDetails(character: MarvelResult) {
+    fun openCharacterDetails(character: Character) {
         detailsViewModel.setDetails(character)
         Navigation.findNavController(requireView()).navigate(R.id.characterToDetails)
     }

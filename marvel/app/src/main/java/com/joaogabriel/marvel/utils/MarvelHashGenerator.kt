@@ -4,7 +4,7 @@ import java.math.BigInteger
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 
-object MarvelHashGenerate {
+object MarvelHashGenerator {
 
     fun generate(timestamp: Long, privateKey: String, publicKey: String): String {
         return try {

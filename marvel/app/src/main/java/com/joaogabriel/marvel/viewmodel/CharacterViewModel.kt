@@ -4,8 +4,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.joaogabriel.marvel.model.MarvelData
-import com.joaogabriel.marvel.model.repository.CharacterRepository
-import com.joaogabriel.marvel.utils.MarvelHashGenerate
+import com.joaogabriel.marvel.model.RetrofitRequest
+import com.joaogabriel.marvel.utils.MarvelHashGenerator
 import com.joaogabriel.marvel.utils.Resource
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -13,19 +13,19 @@ import kotlinx.coroutines.launch
 import retrofit2.await
 import java.util.concurrent.TimeUnit
 
-class CharacterViewModel(private val characterRepository: CharacterRepository, keys: Map<String, String>) : ViewModel() {
+class CharacterViewModel(private val retrofitRequest: RetrofitRequest, keys: Map<String, String>) : ViewModel() {
     val characterResponse: MutableLiveData<Resource<MarvelData>> = MutableLiveData()
 
     private val publicKey = keys["PUBLIC_KEY"]
     private val privateKey = keys["PRIVATE_KEY"]
     private val timestamp = TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis())
-    private val hash = MarvelHashGenerate.generate(timestamp, privateKey!!, publicKey!!)
+    private val hash = MarvelHashGenerator.generate(timestamp, privateKey!!, publicKey!!)
 
     fun getCharacters() {
         characterResponse.postValue(Resource.Loading())
 
         CoroutineScope(Dispatchers.IO).launch {
-            val request = characterRepository.makeRequest()
+            val request = retrofitRequest.makeRequest()
 
             try {
                 val response = request.getCharacters(publicKey!!, timestamp.toString(), hash).await()
@@ -37,10 +37,10 @@ class CharacterViewModel(private val characterRepository: CharacterRepository, k
         }
     }
 
-    class CharacterViewModelFactory(private val characterRepository : CharacterRepository, private val keys: Map<String, String>)
+    class CharacterViewModelFactory(private val retrofitRequest : RetrofitRequest, private val keys: Map<String, String>)
         : ViewModelProvider.Factory {
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-            return CharacterViewModel(characterRepository, keys) as T
+            return CharacterViewModel(retrofitRequest, keys) as T
         }
     }
 }

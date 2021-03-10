@@ -1,18 +1,14 @@
 package com.joaogabriel.marvel.model.repository
 
-import com.joaogabriel.marvel.utils.MarvelApiRequests
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import com.joaogabriel.marvel.model.MarvelData
+import retrofit2.Call
+import retrofit2.http.GET
+import retrofit2.http.Query
 
-class CharacterRepository {
-    private val BASE_URL = "https://gateway.marvel.com:443/v1/public/"
+interface CharacterRepository {
 
-    fun makeRequest(): MarvelApiRequests {
-        return  Retrofit.
-        Builder().
-        baseUrl(BASE_URL).
-        addConverterFactory(GsonConverterFactory.create()).
-        build().
-        create(MarvelApiRequests::class.java)
-    }
+    @GET("characters")
+    fun getCharacters(@Query("apikey") apikey: String,
+                      @Query("ts") ts: String,
+                      @Query("hash") hash: String): Call<MarvelData>
 }

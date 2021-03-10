@@ -4,9 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.joaogabriel.marvel.databinding.CharacterComicsItemsBinding
-import com.joaogabriel.marvel.model.MarvelResult
+import com.joaogabriel.marvel.model.Character
 
-class DetailsAdapter(private val character: MarvelResult): RecyclerView.Adapter<DetailsAdapter.DetailsViewHolder>() {
+class DetailsAdapter(private val character: Character): RecyclerView.Adapter<DetailsAdapter.DetailsViewHolder>() {
     inner class DetailsViewHolder(val binding: CharacterComicsItemsBinding): RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DetailsViewHolder {
