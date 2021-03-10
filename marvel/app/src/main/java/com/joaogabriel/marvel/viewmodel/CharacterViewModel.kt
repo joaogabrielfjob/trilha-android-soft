@@ -3,6 +3,8 @@ package com.joaogabriel.marvel.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.joaogabriel.marvel.model.MarvelData
+import com.joaogabriel.marvel.model.MarvelResult
 import com.joaogabriel.marvel.model.repository.CharacterRepository
 import com.joaogabriel.marvel.utils.MarvelHashGenerate
 import com.joaogabriel.marvel.utils.Resource
@@ -13,7 +15,7 @@ import retrofit2.await
 import java.util.concurrent.TimeUnit
 
 class CharacterViewModel(private val characterRepository: CharacterRepository) : ViewModel() {
-    val characterResponse: MutableLiveData<Resource<Any>> = MutableLiveData()
+    val characterResponse: MutableLiveData<Resource<MarvelData>> = MutableLiveData()
 
     private val publicKey = "a80c35879def43835e6144212fee11a7"
     private val privateKey = "a002ed86c355298a07af83e258a8ad55ce6dcd58"
