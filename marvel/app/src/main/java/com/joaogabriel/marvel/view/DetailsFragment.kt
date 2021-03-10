@@ -25,8 +25,6 @@ class DetailsFragment : Fragment(R.layout.fragment_character_details) {
             binding.recyclerViewComics.layoutManager = LinearLayoutManager(context)
             binding.recyclerViewComics.adapter = DetailsAdapter(it)
 
-            println(it.description)
-
             binding.toolbarDetails.title = it.name
             binding.txtCharacterDescription.text = it.description
             characterUtils.setCharacterImage(requireContext(), it.thumbnail.getPathExtension(), binding.imgCharacter)

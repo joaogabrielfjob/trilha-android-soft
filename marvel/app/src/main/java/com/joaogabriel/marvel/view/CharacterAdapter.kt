@@ -25,8 +25,6 @@ class CharacterAdapter(private val characters: MarvelResults, private val charac
                 binding.txtCharacterName.text = name
 
                 binding.btnShowDetails.setOnClickListener {
-
-                    println(this)
                     characterFragment.openCharacterDetails(this)
                 }
 
