@@ -9,13 +9,15 @@
         <entry key="..\:/Users/joao.gabriel/projects/trilha-android-soft/marvel/app/src/main/res/drawable/ic_marvel.xml" value="0.25" />
         <entry key="..\:/Users/joao.gabriel/projects/trilha-android-soft/marvel/app/src/main/res/drawable/ic_search.xml" value="0.2898148148148148" />
         <entry key="..\:/Users/joao.gabriel/projects/trilha-android-soft/marvel/app/src/main/res/layout/activity_main.xml" value="0.18518518518518517" />
+        <entry key="..\:/Users/joao.gabriel/projects/trilha-android-soft/marvel/app/src/main/res/layout/calma.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/joao.gabriel/projects/trilha-android-soft/marvel/app/src/main/res/layout/character_comics_items.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/joao.gabriel/projects/trilha-android-soft/marvel/app/src/main/res/layout/character_items.xml" value="0.325" />
         <entry key="..\:/Users/joao.gabriel/projects/trilha-android-soft/marvel/app/src/main/res/layout/characters_items.xml" value="0.18518518518518517" />
-        <entry key="..\:/Users/joao.gabriel/projects/trilha-android-soft/marvel/app/src/main/res/layout/fragment_character.xml" value="0.325" />
+        <entry key="..\:/Users/joao.gabriel/projects/trilha-android-soft/marvel/app/src/main/res/layout/fragment_character.xml" value="0.31570382424735555" />
         <entry key="..\:/Users/joao.gabriel/projects/trilha-android-soft/marvel/app/src/main/res/layout/fragment_character_details.xml" value="0.33" />
         <entry key="..\:/Users/joao.gabriel/projects/trilha-android-soft/marvel/app/src/main/res/layout/fragment_splash.xml" value="0.22" />
         <entry key="..\:/Users/joao.gabriel/projects/trilha-android-soft/marvel/app/src/main/res/menu/menu.xml" value="0.18518518518518517" />
+        <entry key="..\:/Users/joao.gabriel/projects/trilha-android-soft/marvel/app/src/main/res/menu/menu_top_bar_characters.xml" value="0.3619791666666667" />
       </map>
     </option>
   </component>
